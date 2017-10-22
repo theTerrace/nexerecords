@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:   Nexe
  Description:  Nexe Theme
@@ -10,4 +11,5 @@
  Tags:         light, dark, minimal, responsive-layout, accessibility-ready
  Text Domain:  nexe
 */
-
+body#tinymce {
+  margin: 12px !important; }

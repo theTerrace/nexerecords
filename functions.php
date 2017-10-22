@@ -35,9 +35,11 @@ function woocommerce_support() {
 }
 
 // load css into the website's front-end
-  function nexe_enqueue_style() {
-      wp_enqueue_style('nexe-style', get_template_directory_uri() . '/style.css' ); 
+  function nexe_enqueue_resources() {
+      wp_enqueue_style('bootsrap', get_template_directory_uri() . '/assets/styles/css-bootstrap/bootstrap.min.css');
+      wp_enqueue_style('nexe-style', get_template_directory_uri() . '/style.css' );
+      wp_enqueue_script('boostrap-js', get_template_directory_uri() . '/assets/scripts/jsbootstrap/bootstrap.min.js');
   }
-  add_action('wp_enqueue_scripts','nexe_enqueue_style');
+  add_action('wp_enqueue_scripts','nexe_enqueue_resources');
 
   
