@@ -27,19 +27,50 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
+/*
+      ===================================
+                Nexe resources
+      ===================================
+*/
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
 
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+// load resources into the website's front-end
+function nexe_enqueue_resources() {
+  //bootsrap min css
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/styles/css-bootstrap/bootstrap.min.css');
+  //our style.css
+  wp_enqueue_style('nexe-style', get_template_directory_uri() . '/style.css', ['bootstrap']);
+
+  //tether min js
+  wp_enqueue_script('theter-js', get_template_directory_uri() . '/assets/scripts/jsbootstrap/tether.min.js', time(), true);
+  //bootsrap min js
+  wp_enqueue_script('boostrap-js', get_template_directory_uri() . '/assets/scripts/jsbootstrap/bootstrap.min.js',['tether-js'], time(), true);
+}
+add_action('wp_enqueue_scripts','nexe_enqueue_resources');
+/*
+function my_post_templater($template){
+  if( !is_single() )
+    return $template;
+    global $wp_query;
+    $c_template = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
+  return empty( $c_template ) ? $template : $c_template;
 }
 
-// load css into the website's front-end
-  function nexe_enqueue_resources() {
-      wp_enqueue_style('bootsrap', get_template_directory_uri() . '/assets/styles/css-bootstrap/bootstrap.min.css');
-      wp_enqueue_style('nexe-style', get_template_directory_uri() . '/style.css' );
-      wp_enqueue_script('boostrap-js', get_template_directory_uri() . '/assets/scripts/jsbootstrap/bootstrap.min.js');
-  }
-  add_action('wp_enqueue_scripts','nexe_enqueue_resources');
+add_filter( 'template_include', 'my_post_templater' );
 
-  
+function give_my_posts_templates(){
+  add_post_type_support( 'post', 'page-attributes' );
+}
+
+add_action( 'init', 'give_my_posts_templates' );*/
+
+/*
+      ===================================
+              Nexe file includes
+      ===================================
+*/
+
+require_once get_template_directory() . '/inc/walker_nexe.php';
+
+
+

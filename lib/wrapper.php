@@ -31,10 +31,12 @@ class SageWrapping {
   public static $base;
 
   public function __construct($template = 'base.php') {
+    //echo "BASE: " .  self::$base . " ";
+    //echo "MAIN: " . self::$main_template . " ";
     $this->slug = basename($template, '.php');
     $this->templates = [$template];
 
-    if (self::$base) {
+    if (self::$base) {      
       $str = substr($template, 0, -4);
       array_unshift($this->templates, sprintf($str . '-%s.php', self::$base));
     }
@@ -46,7 +48,7 @@ class SageWrapping {
   }
 
   public static function wrap($main) {
-    // Check for other filters returning null
+    // Check for other filters returning null    
     if (!is_string($main)) {
       return $main;
     }
