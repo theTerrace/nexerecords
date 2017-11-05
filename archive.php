@@ -1,4 +1,4 @@
-<div class="archive">
+<div class="archive col-md-12">
 
 	<?php if (have_posts()): //Going through the collection of Artists ?>
 
@@ -6,7 +6,7 @@
 
 		<?php while(have_posts()): the_post(); ?>			
 		
-		<div style="background-color: yellow;" class="mx-1 my-1 col-12 col-md-3">
+		<div class="col-md-4 col-sm-6 col-xs-12">
 						
 			<?php get_template_part( 'templates/content-archive') ?>
 		
