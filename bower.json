@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
+    "bootstrap": "v4.0.0-alpha.6",
     "popper.js": "^1.12.3",
     "swiper": "^4.0.3"
   }

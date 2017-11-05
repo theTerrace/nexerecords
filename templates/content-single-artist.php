@@ -10,7 +10,7 @@
 </article>
 
 
-<h2 class="mt-5">Releases</h2>
+<h3 class="mt-5">Releases</h3>
 
 <article>
 	
@@ -37,20 +37,27 @@
 
 	<?php if( $releases ): ?>
 		
-		<ul>
-		
-		<?php foreach( $releases as $release ): ?>
+		<div class="archive col-md-12">
 
-			<li>
-				<a href="<?php echo get_permalink( $release->ID ); ?>">					
-					<?php echo get_the_title( $release->ID ); ?>
-					<?php echo get_the_post_thumbnail( $release->ID, 'medium') ?>
-				</a>
-			</li>
-		
-		<?php  endforeach; ?>
+			<div class="row">
+				
+				<?php foreach( $releases as $release ): ?>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+
+						<article <?php post_class()?>>		
+
+							<a href="<?php echo get_permalink( $release->ID ); ?>">
+								<div class="thumbnail cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $release->ID,'') ; ?>);">
+								<h3 class="box-title"><?php echo get_the_title( $release->ID ); ?></h3>
+								</div>	
+							</a>
+						</article>
+					</div>
+				
+				<?php  endforeach; ?>
 	
-		</ul>
+			</div>
+		</div>
 	
 	<?php endif; ?>
 
