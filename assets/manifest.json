@@ -17,9 +17,15 @@
         "scripts/customizer.js"
       ]
     },
+    "swiper-module.js": {
+      "files": [
+        "scripts/swiper-module.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }
+
   },
   "config": {
     "devUrl": "http://nexerecords.dev"
