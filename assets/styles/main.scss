@@ -1,28 +1,16 @@
-/*
- Theme Name:   Nexe
- Description:  Nexe Theme
- Author:       Edgar Rosendo & Adrià Viñas
- Author URI:   http://nexerecords.dev
- Template:     nexerecords
- Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         light, dark, minimal, responsive-layout, accessibility-ready
- Text Domain:  nexe
-*/
 @import "common/variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-//@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
 @import "common/global";
-//@import "components/buttons";
-//@import "components/comments";
-//@import "components/forms";
-//@import "components/grid";
-// @import "components/wp-classes";
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/grid";
+@import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

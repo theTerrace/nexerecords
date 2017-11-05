@@ -17,9 +17,7 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "scripts": {
-    "css": "node-sass --output-style uncompressed --include-path scss assets/styles/main.scss style.css",
-    "watch": "nodemon -e scss -x \"npm run css\"",
+  "scripts": {   
     "build": "bower install && gulp",
     "jshint": "gulp jshint",
     "jscs": "jscs gulpfile.js assets/scripts/*.js"
