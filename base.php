@@ -20,16 +20,22 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap container-fluid" role="document">
       <div class="content row">
-        <div class="col-12"> 
-          <main class="main">
-            <?php include Wrapper\template_path(); ?>
-          </main><!-- /.main -->
-        </div><!-- /.col-12 -->
+        <div class="container">
+          <div class="row">
+            <main class="main">
+              <?php include Wrapper\template_path(); ?>
+            </main><!-- /.main -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+        
+
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
+      
+
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
