@@ -26,7 +26,7 @@
         
           <?php echo get_the_title($artist->ID) ?>
            
-          <?php //echo get_the_post_thumbnail( $artist->ID , 'medium' ) ?>
+          <?php echo get_the_post_thumbnail( $artist->ID , 'medium' ) ?>
 
         </a>
       </li>
