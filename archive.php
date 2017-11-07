@@ -1,4 +1,8 @@
+<?php use Roots\Sage\Titles; ?>
+
 <div class="archive col-md-12">
+
+	<h1><?= Titles\title(); //esta funcion es de sage y la he editado para que no me muestre esto "Archive: Title" ?></h1> 
 
 	<?php if (have_posts()): //Going through the collection of Artists ?>
 

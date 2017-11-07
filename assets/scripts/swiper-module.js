@@ -1,27 +1,26 @@
 var mySwiper = new Swiper ('.swiper-container', {
+   
+    effect: 'slide',      
     
-    spaceBetween: 30,
+    centeredSlides: true,
+    
+    slidesPerView: 1,
 
-    // Optional parameters
-    direction: 'horizontal',
-    
-    loop: true,
-    
-    speed: 300,
+    speed: 1500,      
 
-    slidesPerView: 3,
+    autoplay: {
+        
+        delay: 3000,
+        
+        disableOnInteraction: false,
+    },
 
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination',      
       clickable: true
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
+    }  
+  
   });
 
 
