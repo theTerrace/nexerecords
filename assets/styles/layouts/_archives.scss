@@ -13,8 +13,26 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		.box-title {
+		flex-direction: column;
+		a{
+			z-index: 9;
+			.box-title {
+				display: none;
+
+			}
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			z-index: 9;
 			display: none;
+			li {
+				list-style: none;
+				a {
+					color: white;
+					text-decoration: none;
+				}
+			}
 		}
 	}
 	&:hover {
@@ -30,10 +48,17 @@
 				bottom: 30px;
 				z-index: 0;
 			}
-			.box-title {
-				z-index: 9;
+			a {
+				.box-title {
 				display: block;
 				color: white;
+				}
+			}
+			ul {
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items:center
 			}
 		}
 	}
