@@ -26,12 +26,21 @@
           <div class="col-md-4 col-sm-6 col-xs-12">
 
             <article <?php post_class()?>>    
-
-              <a href="<?php echo get_permalink( $artist->ID ); ?>">
+              
                 <div class="thumbnail cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $artist->ID,'') ; ?>);">
-                <h3 class="box-title"><?php echo get_the_title( $artist->ID ); ?></h3>
-                </div>  
-              </a>
+                
+                  <div class="inner-info">
+    
+                    <a class="inner-info-title" 
+                    href="<?= get_the_permalink($artist->ID); ?>">
+                    
+                      <h3><?= get_the_title($artist->ID); ?></h3>
+                    
+                    </a>
+
+                  </div>
+                
+                </div>                
             </article>
           </div>
         

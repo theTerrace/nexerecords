@@ -52,22 +52,22 @@
 					
 					<div class="col-md-4 col-sm-6 col-xs-12">
 
-						<article <?php post_class()?>>		
-
-							<a href="<?php echo get_permalink( $release->ID ); ?>">
+						<article <?php post_class()?>>									
 								
-								<div class="thumbnail cover" style="background-image: url(<?php echo 
-									get_the_post_thumbnail_url( $release->ID,'') ; ?>);">
-								
-									<h3 class="box-title">
-										
-										<?php echo get_the_title( $release->ID ); ?>
-											
-									</h3>
-								
-								</div>	
+							<div class="thumbnail cover" style="background-image: url(<?php echo 
+								get_the_post_thumbnail_url( $release->ID,'') ; ?>);">
 							
-							</a>
+								<div class="inner-info">
+	
+									<a class="inner-info-title" href="<?= get_the_permalink($release->ID) ?>">
+									
+										<h3><?= get_the_title( $release->ID ); ?></h3>
+									
+									</a>								
+
+								</div>
+							
+							</div>															
 						
 						</article>
 					
@@ -122,22 +122,23 @@
 					
 					<div class="col-md-4 col-sm-6 col-xs-12">
 
-						<article <?php post_class()?>>		
-
-							<a href="<?php echo get_permalink( $relatedNew->ID ); ?>">
+						<article <?php post_class()?>>									
 								
-								<div class="thumbnail cover" style="background-image: url(<?php echo 
-									get_the_post_thumbnail_url( $relatedNew->ID,'') ; ?>);">
-								
-									<h3 class="box-title">
-										
-										<?php echo get_the_title( $relatedNew->ID ); ?>
-											
-									</h3>
-								
-								</div>	
+							<div class="thumbnail cover" style="background-image: url(<?php echo 
+								get_the_post_thumbnail_url( $relatedNew->ID,'') ; ?>);">
 							
-							</a>
+								<div class="inner-info">
+	
+									<a class="inner-info-title" 
+									href="<?= get_the_permalink($relatedNew->ID); ?>">
+									
+										<h3><?=get_the_title($relatedNew->ID); ?></h3>
+									
+									</a>
+
+								</div>
+							
+							</div>	
 						
 						</article>
 					

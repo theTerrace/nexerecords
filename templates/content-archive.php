@@ -1,25 +1,40 @@
-<article <?php post_class()?>>		
+<article <?php post_class()?>>				
 
-	
+	<div class="thumbnail cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
 		
-		<div class="thumbnail cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
-			<a href="<?php the_permalink(); ?>">
-				<h3 class="box-title"><?php the_title(); ?></h3>
+		<div class="inner-info">
+		
+			<a class="inner-info-title" href="<?php the_permalink(); ?>">
+			
+				<h3><?php the_title(); ?></h3>
+			
 			</a>
+
 			<?php if (is_post_type_archive('release')) : ?>	
-			    <ul>
-				    <?php setup_postdata($post); ?>
-				    <?php foreach( get_field('artists') as $post): // variable must be called $post (IMPORTANT) ?>
-			        <li>
-			            <a href="<?= get_post_field(the_permalink(), get_the_id()); ?>"><?php the_title(); ?></a>
-			        </li>
-				    <?php endforeach; ?>
-				    <?php wp_reset_postdata();?>
-			    </ul>
+
+				<div class="info-top-link-wrapper">
+
+				<?php 
+					
+					$artists = get_field('artists');
+
+					foreach( $artists as $artist ): // variable must be called $post (IMPORTANT) ?>			    				 			        	
+						<a class="info-top-link" href="<?= get_the_permalink($artist->ID); ?>">
+
+							<?= get_the_title($artist->ID) ?>
+
+						</a>
+
+					<?php endforeach; ?>
+
+					<?php wp_reset_postdata();?>
+
+				</div>
 
 			<?php endif; ?>
-		</div>	
+		
+		</div>
 	
+	</div>		
+
 </article>
-
-

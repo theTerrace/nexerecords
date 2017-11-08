@@ -4,8 +4,16 @@
 		
 		<div class="thumbnail cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
 			
-			<h3 class="box-title"><?php the_title(); ?></h3>
+			<div class="inner-info">
 		
+				<a class="inner-info-title" href="<?php the_permalink(); ?>">
+				
+					<h3><?php the_title(); ?></h3>
+				
+				</a>
+		
+			</div>
+
 		</div>					
 
 	</a>
