@@ -10,32 +10,7 @@
  ?>
 <div class="row">
 	<!-- Slider main container -->
-	<div class="swiper-container">
-		<!-- Additional required wrapper -->
-		<?php if( $postsThree ): ?>
-
-			<div class="swiper-wrapper">
-				<!-- Slides -->
-				<?php foreach( $postsThree as $postThree ): ?>
-
-					<div class="swiper-slide">
-						
-						<a class="inner-swiper" href="<?php echo get_the_permalink($postThree->ID)?>"
-						style="background-image: url(<?php echo get_the_post_thumbnail_url($postThree->ID); ?>);">
-						
-						</a>
-					
-					</div>
-
-				<?php endforeach; ?>
-
-			</div>
-
-		<?php endif; ?>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-
-	</div>
+	<!-- TO DO -->
  
 </div>
 

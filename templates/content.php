@@ -1,6 +1,6 @@
 <article <?php post_class(); ?>>
 		
-	<a href="<?php the_field('link_noticia'); ?>"  target="_blank">
+	<a href="<?php the_field('link_noticia'); ?>"  target="_blank"><?php //aqui esta el problema en news. ?>
 		
 		<div class="thumbnail cover" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
 			
