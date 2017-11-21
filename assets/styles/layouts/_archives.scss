@@ -52,7 +52,7 @@
 		a{
 			z-index: 9;
 			.box-title {
-				display: none;
+				display: block;
 
 			}
 		}// anchor_tag		
@@ -89,6 +89,38 @@
 				display: block;
 			}
 		}		
+	}
+
+	@media screen and (max-width: $break-small) {
+		.thumbnail{
+			&:before {
+				background-color: rgba(0, 0, 0, .65);
+				content: '';
+				display: block;
+				position: absolute;
+				left: 15px;
+				right: 15px;
+				top: 0;
+				bottom: 30px;
+				z-index: 0;
+			}
+			.inner-info-title {
+				display: flex!important;
+				h3 {
+					color: white;
+				}
+			}
+			ul {
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items:center;
+			}
+			.info-top-link-wrapper{
+				display: block;
+			}
+		}
+
 	}
 }
 
