@@ -1,16 +1,53 @@
-<article id="post-artist-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <div>
-    <h2><?php the_title(); ?></h2>
-  </div>
-  <div>
-    <div class="image">
-      <?php the_post_thumbnail('medium') ?>
+<section id="post-release-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+  
+  <div class="col-md-6 col-12">
+    
+    <div class="image-wrapper">
+      
+      <?php the_post_thumbnail('', array('class'=>'image-release')) ?>
+    
     </div>    
+  
   </div>
-</article>
 
+
+  <div class="col-md-6 col-12">
+    
+    <h1 class="release-name">
+      
+      <?php the_title(); ?>
+        
+    </h1>
+
+    <div class="embed-playlist">
+      
+      <?php the_field('link_play_bandcamp'); ?>
+
+    </div>
+  
+  </div>
+  
+</section>
+
+<section class="row">
+  
+  <div class="col-12">
+    
+    <div class="info-release">
+      
+      <?php the_field('info_re'); ?>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+<!--
 <h3 class="mt-5">Artist</h3>
-<article class="mt-5" id="test">
+<section class="mt-5" id="test">
 
 <?php 
 
@@ -53,4 +90,4 @@
 
 
 
-</article>
+</section>-->

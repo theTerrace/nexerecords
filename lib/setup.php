@@ -35,7 +35,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  set_post_thumbnail_size( 340, 200, array( 'center', 'center') );
+  add_image_size( 'nexe_artists_thumbnail', 400, 500, array( 'left', 'top' ) );
+  //set_post_thumbnail_size( 340, 200, array( 'center', 'center') );
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
@@ -107,6 +108,7 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
+  
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), array(), time(), null);
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
@@ -117,3 +119,9 @@ function assets() {
 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+
+/*
+    M Y    F U N C T I O N S
+*/
+

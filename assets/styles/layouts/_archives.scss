@@ -11,6 +11,8 @@
 		width: 100%;
 		height: 200px;
 		background-position: center;			 
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
 		
 		.inner-info{
 			display: block;
@@ -58,7 +60,7 @@
 	&:hover {
 		.thumbnail{
 			&:before {
-				background-color: rgba(0, 0, 0, 0.37);
+				background-color: rgba(0, 0, 0, .65);
 				content: '';
 				display: block;
 				position: absolute;
@@ -70,8 +72,8 @@
 			}
 			a {
 				.box-title {
-				display: block;
-				color: white;
+					display: block;
+					color: white;
 				}
 			}
 			ul {

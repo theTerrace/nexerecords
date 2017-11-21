@@ -10,7 +10,7 @@
 
 		<?php while(have_posts()): the_post(); ?>			
 		
-		<div class="col-md-4 col-sm-6 col-xs-12">
+		<div class="col-md-4 col-12">
 						
 			<?php get_template_part( 'templates/content-archive') ?>
 		

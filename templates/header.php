@@ -5,12 +5,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="<?php echo esc_url("/") ?>">
-      <img height="50" width="auto" src="http://nexerecords.dev/app/uploads/2017/10/logo_nexe_chrome-e1508309429152.png">
+      <img height="50" width="auto" src="http://nexerecords.dev/app/uploads/2017/11/NX1-b.svg">
     </a>
   <?php
     if (has_nav_menu('primary_navigation')) :
       wp_nav_menu(['theme_location' => 'primary_navigation',
-                    'menu_class' => 'navbar-nav mx-auto',                      
+                    'menu_class' => 'navbar-nav mx-auto horizontal-on-smartphones',                      
                     'container' => 'div',
                     'container_class' => 'collapse navbar-collapse center-menu',
                     'container_id' => 'navbarNav',

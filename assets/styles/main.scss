@@ -3,11 +3,14 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 @import "common/global";
+@import "components/bootstrap"; //bootstrap overrides
 @import "components/buttons";
 @import "components/comments";
+@import "components/cover";
 @import "components/forms";
 @import "components/grid";
 @import "components/swiper";
@@ -18,5 +21,7 @@
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
+@import "layouts/single-artist";
+@import "layouts/single-release";
 @import "layouts/tinymce";
 @import "layouts/archives";

@@ -1,0 +1,19 @@
+.horizontal-on-smartphones{
+	@media screen and (max-width: $break-small) {
+		flex-direction: row;	
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.nav-item{
+	font-size: 22px;
+	margin: 10px;	
+	&:hover{
+		font-weight: 600;
+	}
+
+	@media screen and (max-width: $break-small) {
+		margin: 10px 17px;
+	}
+}

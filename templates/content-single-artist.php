@@ -1,159 +1,140 @@
-<article id="post-artist-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-	<div>		
-		
-		<h2><?php the_title(); ?></h2>
-	
-	</div>
-	
-	<div>
-		
-		<h4>The content</h4>
-		
-		<?php the_content(); ?>
-	
-	</div>
+<?php use Roots\Sage\Extras; ?>
 
-</article>
+<section id="post-artist-<?php the_ID(); ?>" <?php post_class('row'); ?>>					
+	<div class="col-12">
 
-
-<h3 class="mt-5">Releases</h3>
-
-<article>
-	
-	<?php 	
-		
-		//v2
-
-		$args = array(
-			'post_type' => 'release',
-			'meta_query' => array(
-				array(
-					'key' => 'artists',
-					'value' => '"'. get_the_id() .'"',
-					'compare' => 'LIKE'
-				),
-			),
-		);
-
-		$collection = new WP_Query( $args ); //collection of data
-		$releases = $collection->posts; //get posts from this collection of data
-	
-	?>
-	
-
-	<?php if( $releases ): ?>
-		
-		<div class="archive col-md-12">
-
-			<div class="row">
+		<h1 class="artist-name">
 				
-				<?php foreach( $releases as $release ): ?>
-					
-					<div class="col-md-4 col-sm-6 col-xs-12">
+				<?php the_title() ?>
 
-						<article <?php post_class()?>>									
-								
-							<div class="thumbnail cover" style="background-image: url(<?php echo 
-								get_the_post_thumbnail_url( $release->ID,'') ; ?>);">
-							
-								<div class="inner-info">
-	
-									<a class="inner-info-title" href="<?= get_the_permalink($release->ID) ?>">
-									
-										<h3><?= get_the_title( $release->ID ); ?></h3>
-									
-									</a>								
+		</h1>
 
-								</div>
-							
-							</div>															
-						
-						</article>
-					
-					</div>
-				
-				<?php  endforeach; ?>
-	
-				<?php wp_reset_postdata(); ?>
-	
-			</div>
-		
+		<div class="artist-photo-wrapper">					
+			
+			<?php the_post_thumbnail('', array('class'=>'artist-cover-image')); ?>
+
 		</div>
+
+		<div class="social">
+					
+			<a class="fb" href="<?php the_field('link_fb'); ?>" target="_blank">
+				
+				<img
+				src="http://nexerecords.dev/app/uploads/2017/11/Facebook.svg" />
+			
+			</a>	
+		
+			<a class="sc" href="<?php the_field('link_sc'); ?>" target="_blank">
+				
+				<img				
+				src="http://nexerecords.dev/app/uploads/2017/11/Soundcloud.svg" />
+			
+			</a>	
+			
+			<a class="bc" href="<?php the_field('link_bc'); ?>" target="_blank">
+				
+				<img				
+				src="http://nexerecords.dev/app/uploads/2017/11/Bandcamp.svg" />
+				
+			</a>	
+
+		</div>
+
+	</div>		
+
+</section>
+
+<section class="mt-5 row">
+
+		<div class="bio-artist col-12">
+
+			<?php the_content(); ?>
+
+		</div>
+
+</section>
 	
-	<?php endif; ?>
+	<br class="hidden-md-down">
+	<hr class="hidden-md-up">
 
-
-
-</article>
-
-<h3 class="mt-5 text-center">Related News</h3>
-
-<article>
-	
 	<?php 	
+
+		/*
+		 *	GET RELEASES AND RELATED NEWS
+		 */
 		
-		//v2
-
-		$args = array(
-			'post_type' => 'post',
-			'meta_query' => array(
-				array(
-					'key' => 'artists',
-					'value' => '"'. get_the_id() .'"',
-					'compare' => 'LIKE'
-				),
-			),
-		);
-
-		$collection = new WP_Query( $args ); //collection of data
-		$relatedNews = $collection->posts; //get posts from this collection of data
+		$releases = Extras\get_releases_by_artist(); //get the releases
+		$relatedNews = Extras\get_related_news_by_artist(); //get the related news
+	?>	
 	
-	?>
-	
-
-	<?php if( $relatedNews ): ?>
+<?php if($releases || $relatedNews): ?>
 		
-		<div class="archive col-md-12">
+	<h2><?php the_title(); ?>'s Stuff </h2>	
 
-			<div class="row">
-				
-				<?php foreach( $relatedNews as $relatedNew ): ?>
-					
-					<div class="col-md-4 col-sm-6 col-xs-12">
-
-						<article <?php post_class()?>>									
-								
-							<div class="thumbnail cover" style="background-image: url(<?php echo 
-								get_the_post_thumbnail_url( $relatedNew->ID,'') ; ?>);">
-							
-								<div class="inner-info">
+	<div class="row">
 	
-									<a class="inner-info-title" 
-									href="<?= get_the_permalink($relatedNew->ID); ?>">
-									
-										<h3><?=get_the_title($relatedNew->ID); ?></h3>
-									
-									</a>
-
-								</div>
-							
-							</div>	
-						
-						</article>
-					
-					</div>
+		<?php if($releases): ?>
+		
+			<div class="releases col-md-6 col-12">							
 				
-				<?php  endforeach; ?>
-	
-				<?php wp_reset_postdata(); ?>
+				<h4 class="text-left">Releases</h4>
+
+				<hr>
+
+				<section class="text-left">		
+
+					<?php foreach( $releases as $release ): ?>										
+
+						<a class="link" href="<?= get_the_permalink($release->ID); ?>">
+
+							<p><?= get_the_title( $release->ID ); ?></p>
+							
+						</a>							
+							
+					<?php  endforeach; ?>
+
+					<?php wp_reset_postdata(); ?>
+
+				</section>
 
 			</div>
 		
-		</div>
-	
-	<?php endif; ?>
+		<?php endif; ?>
+
+		<?php  if($relatedNews): ?>
+		
+			<div class="relatedNews col-md-6 col-12">
+				
+				<h4 class="text-left">Related News</h4>
+
+				<hr>
+
+				<section class="text-left">
+
+				<?php foreach( $relatedNews as $relatedNew ): ?>																				
+					<a class="link" href="<?= get_the_permalink($relatedNew->ID); ?>">
+							
+						<p><?=get_the_title($relatedNew->ID); ?></p>
+							
+					</a>
+				
+				<?php  endforeach; ?>
+
+				<?php wp_reset_postdata(); ?>
+
+				</section>
+
+			</div>	
+
+		<?php endif; ?>
+	</div>
+
+<?php endif; ?>
 
 
 
-</article>
+
+
+
+
+				

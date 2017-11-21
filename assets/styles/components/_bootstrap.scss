@@ -1,0 +1,19 @@
+/*
+ *  O V E R R I D E 	N A V B A R 
+ */
+
+
+.navbar-toggler{
+	border: none;
+	.navbar-toggler-icon{
+		background-image: url("http://nexerecords.dev/app/uploads/2017/11/icons8-menu-vertical-32.png");		
+	}
+}
+.navbar-toggler-right{
+	right: .1rem;
+    top: .911rem;
+}
+
+.navbar-brand{
+	width: fit-content;
+}

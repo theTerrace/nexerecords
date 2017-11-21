@@ -1,0 +1,107 @@
+.releases{
+	margin-top: 2.5rem;
+	@media screen and (max-width: $break-small) {
+		margin-top: 0.67rem;
+	}
+
+	h3{		
+		margin-bottom: 1rem;
+	}
+	
+}
+
+.relatedNews{
+	margin-top: 2.5rem;
+	@media screen and (max-width: $break-small) {
+		margin-top: 0.67rem;
+	}
+
+	h3{
+		margin-bottom: 1rem;
+		@media screen and (max-width: $break-small) {			
+			
+		} 
+	}
+}
+
+//RELEASES & RELATED NEWS LINK
+
+.link{
+	text-decoration: none;
+	color: black;
+	p{
+		width: fit-content;	
+	}
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.artist-photo-wrapper{
+	width: 100%;
+	height: 82vh;
+	position: relative;
+
+	@media screen and (max-width: $break-small) {			
+		margin-top: 2vh;	
+		height: 71vh;	   	
+	} 
+		
+}
+
+.artist-name{
+	color: white;
+	position: absolute;
+    z-index: 100;
+    left: 47px;
+    top: 20px; 
+	
+	font-size: 55px;
+	@media screen and (max-width: $break-small) {			
+		position: relative;
+		top: auto;
+		left: auto;
+		color: black;	
+	}
+}
+
+.social{
+	display: flex;	
+	width: 100%;
+	height: fit-content;		
+	justify-content: center;
+	margin-top: 1rem;
+	@media screen and (max-width: $break-small) {
+		/*top: auto;
+		bottom: 0;		   	*/
+	}
+
+	.fb{
+		margin: 17.6px 10px 0px 10px;		
+		img{
+			width: 55px;
+			height: 35px
+		}
+	}
+	.sc{
+		margin: 10px 15px 0px 10px;			
+		img{
+			width: 55px;
+			height: 55px;
+		}
+	}
+	.bc{
+		margin: 15px 10px 0px 18px;		
+		img{
+			width: 55px;
+			height: 55px;
+		}
+	}
+}
+
+.bio-artist{
+	text-align: justify;
+    word-wrap: break-word;    
+    line-height: 1.8;
+    font-size: 18px;
+}
