@@ -6,7 +6,7 @@
 .navbar-toggler{
 	border: none;
 	.navbar-toggler-icon{
-		background-image: url("http://nexerecords.dev/app/uploads/2017/11/icons8-menu-vertical-32.png");		
+		background-image: none;	
 	}
 }
 .navbar-toggler-right{
@@ -16,4 +16,16 @@
 
 .navbar-brand{
 	width: fit-content;
+}
+
+.page-item{
+	a{
+		color: black;
+		font-size: 18px;
+		font-weight: 500;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	
 }

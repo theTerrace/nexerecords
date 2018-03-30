@@ -1,4 +1,6 @@
-<?php use Roots\Sage\Extras; ?>
+<?php use Roots\Sage\Extras; 
+	  use Roots\Sage\Assets;
+?>
 
 <section id="post-artist-<?php the_ID(); ?>" <?php post_class('row'); ?>>					
 	<div class="col-12">
@@ -9,9 +11,8 @@
 
 		</h1>
 
-		<div class="artist-photo-wrapper">					
+		<div class="artist-photo-wrapper" style="background-image:url(<?php the_post_thumbnail_url(array(1110, 546)); ?>); background-repeat:no-repeat;background-size:cover">					
 			
-			<?php the_post_thumbnail('', array('class'=>'artist-cover-image')); ?>
 
 		</div>
 
@@ -20,21 +21,21 @@
 			<a class="fb" href="<?php the_field('link_fb'); ?>" target="_blank">
 				
 				<img
-				src="http://nexerecords.dev/app/uploads/2017/11/Facebook.svg" />
+				src="<?= Assets\asset_path("images/facebook.svg"); ?>" />
 			
 			</a>	
 		
 			<a class="sc" href="<?php the_field('link_sc'); ?>" target="_blank">
 				
 				<img				
-				src="http://nexerecords.dev/app/uploads/2017/11/Soundcloud.svg" />
+				src="<?= Assets\asset_path("images/soundcloud.svg"); ?>" />
 			
 			</a>	
 			
 			<a class="bc" href="<?php the_field('link_bc'); ?>" target="_blank">
 				
 				<img				
-				src="http://nexerecords.dev/app/uploads/2017/11/Bandcamp.svg" />
+				src="<?= Assets\asset_path("images/bandcamp.svg"); ?>" />
 				
 			</a>	
 
@@ -87,7 +88,8 @@
 
 						<a class="link" href="<?= get_the_permalink($release->ID); ?>">
 
-							<p><?= get_the_title( $release->ID ); ?></p>
+							<i class="fa fa-bomb" aria-hidden="true"></i>
+							<span><?= get_the_title( $release->ID ); ?></span>
 							
 						</a>							
 							
@@ -113,8 +115,9 @@
 
 				<?php foreach( $relatedNews as $relatedNew ): ?>																				
 					<a class="link" href="<?= get_the_permalink($relatedNew->ID); ?>">
-							
-						<p><?=get_the_title($relatedNew->ID); ?></p>
+						
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	
+						<span><?=get_the_title($relatedNew->ID); ?></span>
 							
 					</a>
 				

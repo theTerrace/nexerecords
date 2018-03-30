@@ -1,10 +1,17 @@
-<article id="post-artist-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div>
-		
-		<h2><?php the_title(); ?></h2>
+<section id="post-artist-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+	<div class="col-md-6">		
+		<h1 class="merchandise-name">
+			<?php the_title(); ?>	
+		</h1>
+
+		<div class="image-wrapper">
+			<?php the_post_thumbnail('', array('class'=>'image-single')) ?>
+		</div>
 	</div>
-	<div>
-		<h4>The content</h4>
-		<?php the_content(); ?>
+
+	<div class="col-md-6">
+		<div class="info-single">
+			<?php the_content(); ?>
+		</div>
 	</div>
-</article>
+</section>

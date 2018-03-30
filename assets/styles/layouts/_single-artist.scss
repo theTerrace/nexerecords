@@ -27,9 +27,11 @@
 //RELEASES & RELATED NEWS LINK
 
 .link{
+	display: block;
 	text-decoration: none;
 	color: black;
-	p{
+	margin: 12px 0;
+	span{
 		width: fit-content;	
 	}
 	&:hover{
@@ -39,12 +41,12 @@
 
 .artist-photo-wrapper{
 	width: 100%;
-	height: 82vh;
+	height: 60vh;
 	position: relative;
 
 	@media screen and (max-width: $break-small) {			
 		margin-top: 2vh;	
-		height: 71vh;	   	
+		height: 69vh;	   	
 	} 
 		
 }
@@ -69,7 +71,7 @@
 	display: flex;	
 	width: 100%;
 	height: fit-content;		
-	justify-content: center;
+	justify-content: flex-end;
 	margin-top: 1rem;
 	@media screen and (max-width: $break-small) {
 		/*top: auto;
@@ -102,6 +104,6 @@
 .bio-artist{
 	text-align: justify;
     word-wrap: break-word;    
-    line-height: 1.8;
+    line-height: 1.5;
     font-size: 18px;
 }

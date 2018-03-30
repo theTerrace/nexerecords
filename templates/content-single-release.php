@@ -1,93 +1,64 @@
-<section id="post-release-<?php the_ID(); ?>" <?php post_class('row'); ?>>
-  
-  <div class="col-md-6 col-12">
-    
-    <div class="image-wrapper">
-      
-      <?php the_post_thumbnail('', array('class'=>'image-release')) ?>
-    
-    </div>    
-  
-  </div>
-
-
-  <div class="col-md-6 col-12">
-    
+<section class="row">
+  <div class="col-md-6 push-md-6">
     <h1 class="release-name">
-      
-      <?php the_title(); ?>
-        
-    </h1>
+      <?php the_title(); ?>      
+    </h1>     
 
-    <div class="embed-playlist">
-      
-      <?php the_field('link_play_bandcamp'); ?>
-
-    </div>
-  
-  </div>
-  
+    <small><?php the_field('referencia_release') ?></small>
+  </div>    
 </section>
+
+<section id="post-release-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+  <div class="col-md-6">      
+    <div class="image-wrapper">      
+      <?php the_post_thumbnail('', array('class'=>'image-single')) ?>    
+    </div>      
+  </div>
+
+  <div class="col-md-6">            
+    <div class="info-single">
+      <?php the_field('info_re'); ?>
+    </div>  
+  </div>  
+</section>
+
+<br class="hidden-md-down">
+<hr class="hidden-md-up">
 
 <section class="row">
-  
-  <div class="col-12">
-    
-    <div class="info-release">
+
+<?php $artists = get_field('artists'); ?>
+    <?php if($artists): ?>        
       
-      <?php the_field('info_re'); ?>
+      <div class="artists col-md-6">                      
+        <h4 class="text-left">
+          <?php echo (count($artists) > 1) ? "Artists" : "Artist" ?>            
+        </h4>
+        
+        <hr>
 
-    </div>
+        <section class="text-left">   
+          <?php foreach( $artists as $artist ): ?>                    
+            <a class="link" href="<?= get_the_permalink($artist->ID); ?>">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+              <span><?= get_the_title( $artist->ID ); ?></span>        
+            </a>                            
+          <?php  endforeach; ?>
 
-  </div>
+          <?php wp_reset_postdata(); ?>
+        </section>
+      </div>
+      
+      <div class="bandcamp col-md-6">
+        <h4 class="text-left">Bandcamp</h4>
 
+        <hr>
+        
+        <div class="embed-playlist">      
+          <?php the_field('link_play_bandcamp'); ?>
+        </div>
+      </div>    
+
+    <?php endif; ?>
 
 </section>
-
-
-<!--
-<h3 class="mt-5">Artist</h3>
-<section class="mt-5" id="test">
-
-<?php 
-
-  $artists = get_field('artists');
-
-  if($artists): ?>
-
-  <div class="archive col-md-12">
-
-      <div class="row">
-    
-        <?php foreach ($artists as $artist): ?>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-
-            <article <?php post_class()?>>    
-              
-                <div class="thumbnail cover" style="background-image: url(<?php echo get_the_post_thumbnail_url( $artist->ID,'') ; ?>);">
-                
-                  <div class="inner-info">
-    
-                    <a class="inner-info-title" 
-                    href="<?= get_the_permalink($artist->ID); ?>">
-                    
-                      <h3><?= get_the_title($artist->ID); ?></h3>
-                    
-                    </a>
-
-                  </div>
-                
-                </div>                
-            </article>
-          </div>
-        
-        <?php endforeach; ?>
-  
-      </div>
-    </div>
-  
-  <?php endif; ?>
-
-
-
-</section>-->

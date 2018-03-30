@@ -1,4 +1,8 @@
-.horizontal-on-smartphones{
+.banner {
+	//background-color: hsla(0, 0%, 67%, .5);
+}
+
+.horizontal-on-smartphones {
 	@media screen and (max-width: $break-small) {
 		flex-direction: row;	
 		flex-wrap: wrap;
@@ -6,12 +10,24 @@
 	}
 }
 
-.nav-item{
+.nav-link {
+	padding: 0.2rem 1rem!important;
+}
+
+.current-menu-item {
+	a {
+		font-weight: 900;
+		color: black!important;
+		border-bottom: 1px solid black;
+	}
+}
+.nav-item {
 	font-size: 22px;
 	margin: 10px;	
-	&:hover{
+	&:hover {
 		font-weight: 600;
 	}
+
 
 	@media screen and (max-width: $break-small) {
 		margin: 10px 17px;

@@ -24,10 +24,20 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "custom-animation.js":{
+      "files":[
+        "scripts/custom-animation.js"
+      ]
+    },
+    "hammer.js": {
+      "files": [
+        "scripts/hammer.js"
+      ]
     }
 
   },
   "config": {
-    "devUrl": "http://nexerecords.dev"
+    "devUrl": "http://nexerecords.test"
   }
 }

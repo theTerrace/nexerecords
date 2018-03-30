@@ -113,8 +113,13 @@ function assets() {
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 
+  wp_enqueue_script('nexe/hammerjs', Assets\asset_path('scripts/hammer.js'),['jquery'], null, true);
+
+  wp_enqueue_script('nexe/custom-animation', Assets\asset_path('scripts/custom-animation.js'),['jquery', 'nexe/hammerjs'], null, true);
+
   if(is_front_page()){
     wp_enqueue_script('nexe/swiperjs', Assets\asset_path('scripts/swiper-module.js'), array(), null, true);
+
   }
 
 }
@@ -124,4 +129,14 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 /*
     M Y    F U N C T I O N S
 */
+
+/*function archive_post_per_page(){
+
+  if(is_post_type_archive('artist')){
+    $query->set('post_per_page', 9);
+  }
+
+}
+
+add_action('pre_get_posts', 'archive_post_per_page');*/
 

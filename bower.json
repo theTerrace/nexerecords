@@ -6,17 +6,12 @@
   ],
   "license": "MIT",
   "private": true,
-  "font-awesome": {  
-    "main": [
-        "./scss/font-awesome.scss",
-        "./fonts/*"  
-    ]
-  },
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.6",
     "popper.js": "^1.12.3",
     "swiper": "^4.0.3",
     "animate.css": "^3.5.2",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "normalize-css": "^7.0.0"
   }
 }

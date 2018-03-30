@@ -13,6 +13,7 @@
 		background-position: center;			 
 		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 		filter: grayscale(100%);
+		position: relative;
 		
 		.inner-info{
 			display: block;
@@ -64,10 +65,10 @@
 				content: '';
 				display: block;
 				position: absolute;
-				left: 15px;
-				right: 15px;
+				left: 0;
+				right: 0;
 				top: 0;
-				bottom: 30px;
+				bottom: 0;
 				z-index: 0;
 			}
 			a {
@@ -98,10 +99,10 @@
 				content: '';
 				display: block;
 				position: absolute;
-				left: 15px;
-				right: 15px;
+				left: 0;
+				right: 0;
 				top: 0;
-				bottom: 30px;
+				bottom: 0;
 				z-index: 0;
 			}
 			.inner-info-title {
@@ -125,7 +126,7 @@
 }
 
 
-.artist, .release, .post {
+.artist, .release, .post, .merchandise {
 	@extend .master-archive;
 }
 

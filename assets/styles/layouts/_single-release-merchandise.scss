@@ -1,0 +1,35 @@
+.image-wrapper {
+
+	.image-single {
+		width: 100%;
+		height: auto;
+		margin-top: 1.5rem;
+	}
+
+}
+
+.release-name {
+	margin-top: .5rem;
+}
+
+.info-single {
+	margin-top: 1.5rem;
+	text-align: justify;
+    word-wrap: break-word;    
+    line-height: 1.5;
+    font-size: 16.5px;
+}
+
+.artists {
+	margin-top: 1.5rem;
+	@media screen and (max-width: $break-small){
+		margin-top: .67rem;
+	}
+}
+
+.bandcamp {
+	margin-top: 1.5rem;
+	@media screen and (max-width: $break-small){
+		margin-top: .67rem;
+	}	
+}
