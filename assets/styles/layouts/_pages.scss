@@ -6,3 +6,8 @@ $bgColor: blue;
 	height: $height;
 	background-color: $bgColor;
 }
+
+.archive > hr {
+	border-bottom: 1px solid #292b2c;
+	margin-top: 0;
+}

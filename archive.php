@@ -7,13 +7,14 @@
     </i></span>';
     $prev_pagination_link_label = '<span><i class="fa fa-angle-left" aria-hidden="true">
     </i> Prev page</span>'; 
-
+	
 ?>
 
 <div class="archive col-12">
 
 	<h1><?= Titles\title(); //esta funcion es de sage y la he editado para que no me muestre esto "Archive: Title" ?></h1> 
 
+	<hr>
 
 	<?php if ($collections->have_posts()): //Going through the collection?>
 
