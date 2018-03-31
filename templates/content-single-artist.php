@@ -1,8 +1,9 @@
 <?php use Roots\Sage\Extras; 
 	  use Roots\Sage\Assets;
 ?>
-
-<section id="post-artist-<?php the_ID(); ?>" <?php post_class('row'); ?>>					
+<div class="container">
+	
+<section class="row" id="post-artist-<?php the_ID(); ?>" >					
 	<div class="col-12">
 
 		<h1 class="artist-name">
@@ -135,7 +136,7 @@
 <?php endif; ?>
 
 
-
+</div>
 
 
 

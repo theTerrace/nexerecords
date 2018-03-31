@@ -78,6 +78,33 @@
 		bottom: 0;		   	*/
 	}
 
+	a {
+		background: black;
+		width: 100px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0px;
+		text-transformation: uppercase;
+		font-family: 'arial', sans-serif;
+		font-weight: bold;
+		color:white;
+		padding:20px;
+		display: block;
+		background-image: linear-gradient(to left,
+			transparent,
+			transparent 50%,
+			#fff 50%,
+			#fff);
+		background-position: 100%;
+		background-size: 200% 100%;
+		transition: all .25s ease-in;
+		  
+		&:hover{
+			background-position: 0 0;
+			color:#333;
+		}
+	  }
+
 	.fb{
 		margin: 17.6px 10px 0px 10px;		
 		img{

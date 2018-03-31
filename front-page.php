@@ -1,50 +1,11 @@
-<?php use Roots\Sage\Titles; ?>
-<?php use Roots\Sage\Extras; ?>
-<?php $news = Extras\get_archive_news(); ?>
 
+<?php 
+use Roots\Sage\Titles;
+use Roots\Sage\Extras;
+$news = Extras\get_archive_news(); 
+ ?>
 
-
-<style>
-    
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color:#000;
-      margin: 0;
-      padding: 0;
-    }
-    .swiper-container {
-      width: 100%;
-      height: 500px;
-    }
-    .swiper-slide {
-      text-align: center;
-	  font-size: 18px;
-	  /background: #fff;
-	        /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-	}
-
-	.swiper-button-prev, .swiper-button-next {
-		display: none;
-		transform: translate(0, -85%);
-	}
-  </style>
-</head>
-<body>
-
+<div class="container">
 <div class="row">
 	
 	<div class="col-12">
@@ -82,9 +43,8 @@
 	</div>
 
 </div>
-
-
-
+</div>
+<div class="container">
 <div class="row">
 	
 	<div class="archive col-12">
@@ -112,4 +72,5 @@
 		?>
 	</div>
 
+</div>
 </div>

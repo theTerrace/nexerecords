@@ -7,7 +7,23 @@ $bgColor: blue;
 	background-color: $bgColor;
 }
 
-.archive > hr {
-	border-bottom: 1px solid #292b2c;
-	margin-top: 0;
+.archive > .hr {
+	height:3px;
+	content:"";
+	background-color: black;
+	margin-top: 1.33em;
+	-webkit-animation: mymove 3s;
+	animation: mymove 3s;
+	margin-bottom: 1.7em;
+}
+
+@-webkit-keyframes mymove {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {width: 0%;}
+	to {width: 100%;}
 }

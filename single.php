@@ -5,7 +5,7 @@
 <?php endwhile; endif; ?>
 
 <!-- TO DO NEXT PREV -->
-
+<div class="container">
 <section class="row mt-5 prev-next-container 
 	<?php if(! $prev_post = get_previous_post()): echo 'its-first'; else: '' ; endif; ?> mb-5">
 	
@@ -13,19 +13,19 @@
 
 		<div class="col-6 prev-next-wrapper">
 			
-			<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
+			
 			
 				<div class="post-navigator its-prev">
 							
-					<span class="title-prev">
-						
-						<h4><?php echo esc_attr( $prev_post->post_title ); ?></h4>
-
-					</span>					
+					<p class="title-prev">
+					<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
+					< <?php echo esc_attr( $prev_post->post_title ); ?>
+					</a>
+					</p>					
 							
 				</div>
 			
-			</a>
+			
 		
 		</div>
 	
@@ -35,22 +35,23 @@
 
 		<div class="col-6 prev-next-wrapper">
 			
-			<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
+			
 			
 				<div class="post-navigator its-next">
 																	
-					<span class="title-next">
+					<p class="title-next">
 						
-						<h4><?php echo esc_attr( $next_post->post_title ); ?></h4>
+					<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"> <?php echo esc_attr( $next_post->post_title ); ?> ></a>
 					
-					</span>
+</p>
 				
 				</div>
 			
-			</a>
+			
 		
 		</div>
 
 	<?php endif; ?>
 	    	
 </section>
+</div>
