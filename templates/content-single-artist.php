@@ -21,23 +21,21 @@
 					
 			<a class="fb" href="<?php the_field('link_fb'); ?>" target="_blank">
 				
-				<img
-				src="<?= Assets\asset_path("images/facebook.svg"); ?>" />
+			<i class="fa fa-facebook fa-2x fb-nexe" aria-hidden="true"></i>
+			<p class="small">Facebook</p>
 			
 			</a>	
 		
 			<a class="sc" href="<?php the_field('link_sc'); ?>" target="_blank">
 				
-				<img				
-				src="<?= Assets\asset_path("images/soundcloud.svg"); ?>" />
-			
-			</a>	
+			<i class="fa fa-soundcloud fa-2x sc-nexe" aria-hidden="true"></i>
+			<p class="small">Sound Cloud</p>
+			</a>
 			
 			<a class="bc" href="<?php the_field('link_bc'); ?>" target="_blank">
 				
-				<img				
-				src="<?= Assets\asset_path("images/bandcamp.svg"); ?>" />
-				
+			<i class="fa fa-bandcamp fa-2x bc-nexe" aria-hidden="true"></i>
+			<p class="small">BandCamp</p>
 			</a>	
 
 		</div>
@@ -47,7 +45,7 @@
 </section>
 
 <section class="mt-5 row">
-
+		<div class="col-md-6 bio"><h3>Biography</h3></div>
 		<div class="bio-artist col-12">
 
 			<?php the_field('bio'); ?>

@@ -57,8 +57,6 @@
     z-index: 100;
     left: 47px;
     top: 20px; 
-	
-	font-size: 55px;
 	@media screen and (max-width: $break-small) {			
 		position: relative;
 		top: auto;
@@ -72,15 +70,19 @@
 	width: 100%;
 	height: fit-content;		
 	justify-content: flex-end;
-	margin-top: 1rem;
+	margin-top: .5rem;
 	@media screen and (max-width: $break-small) {
-		/*top: auto;
-		bottom: 0;		   	*/
+		justify-content: center;
 	}
 
 	a {
-		background: black;
-		width: 100px;
+		background: #000000;
+		width: 60px;
+		height:55px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
 		margin: 0 auto;
 		text-align: center;
 		padding: 0px;
@@ -88,8 +90,6 @@
 		font-family: 'arial', sans-serif;
 		font-weight: bold;
 		color:white;
-		padding:20px;
-		display: block;
 		background-image: linear-gradient(to left,
 			transparent,
 			transparent 50%,
@@ -98,33 +98,38 @@
 		background-position: 100%;
 		background-size: 200% 100%;
 		transition: all .25s ease-in;
+		
 		  
 		&:hover{
 			background-position: 0 0;
 			color:#333;
+			text-decoration: none;
+			i {
+				color:black;
+				align-self: center;
+				transition: color .25s;
+    			-webkit-transition: color .25s;
+			}
+		}
+		.small {
+			font-size: .7rem;
+			margin:0;
+			color:black;
+		}
+		i {
+			color: white;
+			font-size: 1.6rem;
 		}
 	  }
 
 	.fb{
-		margin: 17.6px 10px 0px 10px;		
-		img{
-			width: 55px;
-			height: 35px
-		}
+		margin: 0px 2px 0 0px;
 	}
 	.sc{
-		margin: 10px 15px 0px 10px;			
-		img{
-			width: 55px;
-			height: 55px;
-		}
+		margin: 0px 2px 0 0px;
 	}
 	.bc{
-		margin: 15px 10px 0px 18px;		
-		img{
-			width: 55px;
-			height: 55px;
-		}
+		margin: 0px 2px 0 0px;	
 	}
 }
 
@@ -133,4 +138,14 @@
     word-wrap: break-word;    
     line-height: 1.5;
     font-size: 18px;
+}
+
+.bio {
+	top:-80px;
+	@media screen and (max-width: $break-small) {
+		top: -20px;
+	}
+	h3 {
+		display: inline;
+	}
 }

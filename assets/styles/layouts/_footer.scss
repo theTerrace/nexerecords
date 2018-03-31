@@ -1,22 +1,74 @@
-.fb-nexe{
-	width: 15.75px;
-	height: auto;
-	margin:10px;
-}
+.content-info {
+	margin-top: 150px;
+	.social{
+		border-top: 3px solid black;
+		padding-top: 1.5rem;
+		display: flex;	
+		width: 100%;
+		height: fit-content;		
+		justify-content: space-between;
+		align-items: center;
+		@media screen and (max-width: $break-small) {
+			justify-content: center;
+		}
+		.all {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+		}
 
-.sc-nexe{
-	width: 50px;
-	height: auto; 
-	margin:10px;
-}
+		a {
+			border-radius: 50%;
+			background: #000000;
+			width: 30px;
+			height:30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			text-align: center;
+			padding: 0px;
+			text-transformation: uppercase;
+			font-family: 'arial', sans-serif;
+			font-weight: bold;
+			color:white;
+			background-image: linear-gradient(to left,
+				transparent,
+				transparent 50%,
+				#fff 50%,
+				#fff);
+			background-position: 100%;
+			background-size: 200% 100%;
+			transition: all .25s ease-in;
+			
+			
+			&:hover{
+				background-position: 0 0;
+				color:#333;
+				text-decoration: none;
+				border: 1px solid black;
+				i {
+					color:black;
+					align-self: center;
+					transition: color .25s;
+					-webkit-transition: color .25s;
+				}
+			}
 
-.bc-nexe{
-	width: 50px;
-	height: auto; 
-	margin:10px;
-}
+			i {
+				color: white;
+				font-size: 1rem;
+			}
+		}
 
-i[class^="fa"]{
-	color: black;
-	text-decoration: none;	
+		.fb{
+			margin: 0 15px 10px 15px;
+		}
+		.sc{
+			margin: 0 15px 10px 15px;
+		}
+		.bc{
+			margin: 0 15px 10px 15px;	
+		}
+	}
 }

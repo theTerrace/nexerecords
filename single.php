@@ -6,8 +6,8 @@
 
 <!-- TO DO NEXT PREV -->
 <div class="container">
-<section class="row mt-5 prev-next-container 
-	<?php if(! $prev_post = get_previous_post()): echo 'its-first'; else: '' ; endif; ?> mb-5">
+<section class="row prev-next-container 
+	<?php if(! $prev_post = get_previous_post()): echo 'its-first'; else: '' ; endif; ?> ">
 	
 	<?php if($prev_post = get_previous_post()): ?>
 

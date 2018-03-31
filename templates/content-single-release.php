@@ -1,3 +1,4 @@
+<div class="container">
 <section class="row">
   <div class="col-md-6 push-md-6 hidden-md-up">
     <h1 class="release-name">
@@ -16,7 +17,7 @@
   </div>
 
   <div class="col-md-6"> 
-    <div class="hidden-md-down">
+    <div class="hidden-sm-down">
       <h1 class="release-name">
         <?php the_title(); ?>      
       </h1>     
@@ -30,8 +31,8 @@
   </div>  
 </section>
 
-<br class="hidden-md-down">
-<hr class="hidden-md-up">
+<br class="hidden-sm-down">
+<hr class="hidden-sm-up">
 
 <section class="row">
     
@@ -70,3 +71,4 @@
     <?php endif; ?>
 
 </section>
+</div>
