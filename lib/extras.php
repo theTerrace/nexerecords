@@ -77,6 +77,19 @@ function get_related_news_by_artist(){
     return $relatedNews;
 }
 
+function get_archive_news(){
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+  $args = array(
+      'post_type' => 'new',
+      'posts_per_page' => 12,
+      'paged' => $paged
+  );
+
+  $the_query = new \WP_Query($args);
+  return $the_query;
+}
+
 function archive_post_per_page(){
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 

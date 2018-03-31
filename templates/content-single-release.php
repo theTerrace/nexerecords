@@ -1,5 +1,5 @@
 <section class="row">
-  <div class="col-md-6 push-md-6">
+  <div class="col-md-6 push-md-6 hidden-md-up">
     <h1 class="release-name">
       <?php the_title(); ?>      
     </h1>     
@@ -15,7 +15,15 @@
     </div>      
   </div>
 
-  <div class="col-md-6">            
+  <div class="col-md-6"> 
+    <div class="hidden-md-down">
+      <h1 class="release-name">
+        <?php the_title(); ?>      
+      </h1>     
+
+      <small><?php the_field('referencia_release') ?></small>           
+    </div>
+    
     <div class="info-single">
       <?php the_field('info_re'); ?>
     </div>  
@@ -26,6 +34,16 @@
 <hr class="hidden-md-up">
 
 <section class="row">
+    
+  <div class="bandcamp col-md-6">
+      <h4 class="text-left">Bandcamp</h4>
+
+      <hr>
+      
+      <div class="embed-playlist">      
+        <?php the_field('link_play_bandcamp'); ?>
+      </div>
+  </div>
 
 <?php $artists = get_field('artists'); ?>
     <?php if($artists): ?>        
@@ -47,16 +65,6 @@
 
           <?php wp_reset_postdata(); ?>
         </section>
-      </div>
-      
-      <div class="bandcamp col-md-6">
-        <h4 class="text-left">Bandcamp</h4>
-
-        <hr>
-        
-        <div class="embed-playlist">      
-          <?php the_field('link_play_bandcamp'); ?>
-        </div>
       </div>    
 
     <?php endif; ?>
