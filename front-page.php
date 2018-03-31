@@ -1,19 +1,28 @@
 
 <?php 
-use Roots\Sage\Titles;
-use Roots\Sage\Extras;
-$news = Extras\get_archive_news(); 
- ?>
+	use Roots\Sage\Titles;
+	use Roots\Sage\Extras;
+	$news = Extras\get_archive_news();
+	$news_swiper = Extras\get_archive_news_swiper();
+
+	///NEXT AND PREV LABEL (FONTAWESOME):
+    $next_pagination_link_label = '<span>Next page <i class="fa fa-angle-right" aria-hidden="true">
+    </i></span>';
+    $prev_pagination_link_label = '<span><i class="fa fa-angle-left" aria-hidden="true">
+    </i> Prev page</span>'; 
+?>
+
+
 
 <div class="container">
 <div class="row">
 	
 	<div class="col-12">
 
-		<?php if ( $news->have_posts() ) : ?>
+		<?php if ( $news_swiper->have_posts() ) : ?>
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<?php while ( $news->have_posts() ) : $news->the_post(); ?>
+					<?php while ($news_swiper->have_posts() ) : $news_swiper->the_post(); ?>
 						<div class="swiper-slide">
 						<article <?php post_class(); ?>>
 							<a href="<?php the_field('link_noticia'); ?>"  target="_blank"><?php //aqui esta el problema en news. ?>
@@ -63,13 +72,35 @@ $news = Extras\get_archive_news();
 				
 					</div>
 
-				<?php endwhile; ?> 
-			
+				<?php endwhile;  
+				wp_reset_postdata();  // Restore global post data stomped by the_post().
+				?>
 			</div>
 
-		<?php endif; 
-		wp_reset_postdata();  // Restore global post data stomped by the_post().
-		?>
+			<?php
+				if ( function_exists( 'get_archive_news' ) ) {
+					global $wp_query;
+					archive_post_per_page( $wp_query->max_num_pages );
+				}
+			?>
+
+			<div class="row">
+				<div class="col-12">
+					<nav>
+						<ul class="pagination justify-content-between">
+							<li class="page-item flex-last">
+								<?= get_next_posts_link($next_pagination_link_label, $news->max_num_pages); ?>
+							</li>
+							<li class="page-item flex-first">
+								<?= get_previous_posts_link($prev_pagination_link_label); ?>
+							</li>
+						</ul>
+					</nav>
+				</div>		
+			</div>
+
+		
+		<?php endif; ?>
 	</div>
 
 </div>

@@ -50,7 +50,7 @@
 
 		<div class="bio-artist col-12">
 
-			<?php the_content(); ?>
+			<?php the_field('bio'); ?>
 
 		</div>
 

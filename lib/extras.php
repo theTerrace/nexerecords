@@ -77,12 +77,22 @@ function get_related_news_by_artist(){
     return $relatedNews;
 }
 
+function get_archive_news_swiper(){
+  $args = array(
+      'post_type' => 'new',
+      'posts_per_page' => 9,
+      'order' => 'DESC'
+  );
+  $the_query = new \WP_Query($args);
+  return $the_query;
+}
+
 function get_archive_news(){
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
   $args = array(
       'post_type' => 'new',
-      'posts_per_page' => 12,
+      'posts_per_page' => 2,
       'paged' => $paged
   );
 
@@ -96,10 +106,11 @@ function archive_post_per_page(){
   $args = array(
       'post_type' => (is_post_type_archive('artist')) ? 'artist' : 
       ((is_post_type_archive('release')) ? 'release' : 'merchandise'),         
-      'posts_per_page' => 9,
+      'posts_per_page' => 2,
       'paged' => $paged
   );
 
   $the_query = new \WP_Query($args);
   return $the_query;
 }
+

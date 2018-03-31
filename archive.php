@@ -33,6 +33,13 @@
 
 			</div>
 
+			<?php
+				if ( function_exists( 'archive_post_per_page' ) ) {
+					global $wp_query;
+					archive_post_per_page( $wp_query->max_num_pages );
+				}
+			?>
+
 			<div class="row">
 				<div class="col-12">
 					<nav>
@@ -52,10 +59,6 @@
 			<div class="row">
 				<h2>No posts found</h2>	
 			</div>	
-				
-
-			
-			
 			<?php endif; ?> 
 
 		</div>
