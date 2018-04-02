@@ -22,14 +22,14 @@
 
 .artists {
 	margin-top: 1.5rem;
-	@media screen and (max-width: $break-small){
+	@media screen and (max-width: $md){
 		margin-top: .67rem;
 	}
 }
 
 .bandcamp {
 	margin-top: 1.5rem;
-	@media screen and (max-width: $break-small){
+	@media screen and (max-width: $md){
 		margin-top: .67rem;
 	}	
 }

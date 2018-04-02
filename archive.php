@@ -23,7 +23,7 @@
 
 				<?php while($collections->have_posts()): $collections->the_post(); ?>			
 				
-				<div class="col-md-4">
+				<div class="col-lg-4 col-md-6">
 								
 					<?php get_template_part( 'templates/content-archive') ?>
 				
@@ -40,20 +40,28 @@
 				}
 			?>
 
-			<div class="row">
-				<div class="col-12">
-					<nav>
-						<ul class="pagination justify-content-between">
-							<li class="page-item flex-last">
-								<?= get_next_posts_link($next_pagination_link_label, $collections->max_num_pages); ?>
-							</li>
-							<li class="page-item flex-first">
+			
+
+				<section class="row prev-next-container 
+				">
+					<div class="col-6 prev-next-wrapper">
+						<div class="post-navigator its-prev">
+							<p class="title-prev">
 								<?= get_previous_posts_link($prev_pagination_link_label); ?>
-							</li>
-						</ul>
-					</nav>
-				</div>		
-			</div>
+								
+							</p>
+						</div>
+					</div>
+					<div class="col-6 prev-next-wrapper">
+						<div class="post-navigator its-next">
+							<p class="title-next">
+								<?= get_next_posts_link($next_pagination_link_label, $collections->max_num_pages); ?>
+							</p>
+						</div>
+					</div>
+				</section>
+
+
 				<?php else: ?>	
 			
 			<div class="row">

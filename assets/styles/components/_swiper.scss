@@ -1,11 +1,23 @@
 .swiper-container {
 	width: auto;
-	height: 84vh;
-	margin-top: 5.55vh;
+	height: 42vh;
+	margin-top: 1vh;
+	border-bottom: 3px solid black;	
+	padding-bottom: 24px;
 }
-.swiper-slide {
-	width: 1000px;	
-	height: 84%;
+
+.swiper-cont {
+	width: auto;
+	height: 42vh;
+	margin-top: 1vh;
+	border-bottom: 3px solid black;	
+	padding-bottom: 24px;
+	.swiper-slide {
+		width:350px;
+	}
+}
+.swiper-slide {	
+	height: 98.6%;
 
 	text-align: center;
 	font-size: 18px;	
@@ -41,6 +53,6 @@
 .swiper-pagination{
 	.swiper-pagination-bullet-active {
 	    opacity: 1;
-	    background: #495868;
+		background: #495868;
 	}
 }

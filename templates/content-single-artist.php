@@ -4,9 +4,29 @@
 <div class="container">
 	
 <section class="row" id="post-artist-<?php the_ID(); ?>" >					
+	<div class=" col-md-8 col-6 hidden-lg-up">
+	<h1 class="artist-name ">
+				
+				<?php the_title() ?>
+
+		</h1>
+	</div>
+	<div class="col-6  col-md-4 hidden-lg-up social ">
+			<a class=" small" href="<?php the_field('link_fb'); ?>" target="_blank">
+				<i class="fa fa-facebook fa-2x fb-nexe" aria-hidden="true"></i>
+			</a>	
+		
+			<a class=" small" href="<?php the_field('link_sc'); ?>" target="_blank">
+				<i class="fa fa-soundcloud fa-2x sc-nexe" aria-hidden="true"></i>
+			</a>
+			
+			<a class=" small" href="<?php the_field('link_bc'); ?>" target="_blank">
+				<i class="fa fa-bandcamp fa-2x bc-nexe" aria-hidden="true"></i>
+			</a>	
+	</div>
 	<div class="col-12">
 
-		<h1 class="artist-name">
+		<h1 class="artist-name hidden-md-down">
 				
 				<?php the_title() ?>
 
@@ -17,25 +37,25 @@
 
 		</div>
 
-		<div class="social">
+		<div class="social hidden-md-down">
 					
 			<a class="fb" href="<?php the_field('link_fb'); ?>" target="_blank">
 				
 			<i class="fa fa-facebook fa-2x fb-nexe" aria-hidden="true"></i>
-			<p class="small">Facebook</p>
+			<p >Facebook</p>
 			
 			</a>	
 		
 			<a class="sc" href="<?php the_field('link_sc'); ?>" target="_blank">
 				
 			<i class="fa fa-soundcloud fa-2x sc-nexe" aria-hidden="true"></i>
-			<p class="small">Sound Cloud</p>
+			<p >Sound Cloud</p>
 			</a>
 			
 			<a class="bc" href="<?php the_field('link_bc'); ?>" target="_blank">
 				
 			<i class="fa fa-bandcamp fa-2x bc-nexe" aria-hidden="true"></i>
-			<p class="small">BandCamp</p>
+			<p >BandCamp</p>
 			</a>	
 
 		</div>

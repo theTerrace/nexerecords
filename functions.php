@@ -72,7 +72,7 @@ function add_blog_post_to_query( $query ) {
   if ($query->is_post_type_archive('merchandise') && $query->is_main_query()){
       $query->set( 'post_type', array('merchandise') );
   }
-  if(!is_admin())$query->set( 'posts_per_page', 2 );
+  if(!is_admin())$query->set( 'posts_per_page', 12 );
   
 }
 add_action( 'pre_get_posts', 'add_blog_post_to_query' );

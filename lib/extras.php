@@ -92,7 +92,7 @@ function get_archive_news(){
 
   $args = array(
       'post_type' => 'new',
-      'posts_per_page' => 2,
+      'posts_per_page' => 3,
       'paged' => $paged
   );
 
@@ -106,7 +106,7 @@ function archive_post_per_page(){
   $args = array(
       'post_type' => (is_post_type_archive('artist')) ? 'artist' : 
       ((is_post_type_archive('release')) ? 'release' : 'merchandise'),         
-      'posts_per_page' => 2,
+      'posts_per_page' => 3,
       'paged' => $paged
   );
 

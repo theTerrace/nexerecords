@@ -8,7 +8,7 @@
 		height: fit-content;		
 		justify-content: space-between;
 		align-items: center;
-		@media screen and (max-width: $break-small) {
+		@media screen and (max-width: md) {
 			justify-content: center;
 		}
 		.all {

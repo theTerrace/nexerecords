@@ -2,32 +2,17 @@
 	font-family: 'GeogrotesqueRegular';
 }
 
-  .swiper-container {
-	width: 100%;
-	height: 500px;
-  }
-  .swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	background-color: #fff;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-  }
+.archive {
+	padding-top: 40px;
+} 
 
   .swiper-button-prev, .swiper-button-next {
 	  display: none;
 	  transform: translate(0, -85%);
   }
+
+  
+
 
 .wrap{
 	margin-top: 2rem; 
@@ -63,6 +48,7 @@
 				width: 200px;
 				height: 40px;
 				line-height: 40px;
+                margin: 0;
 				text-align: center;
 
 
@@ -86,7 +72,7 @@
 						animation: sword .5s;
 					}
 				}
-				a {
+				> * {
 					display: block;
 					color: #000!important;
 					font-size: 13px;
@@ -137,7 +123,7 @@
                 position: relative;
                 width: 200px;
                 height: 40px;
-                margin: 0 auto;
+                margin: 0;
                 line-height: 40px;
                 text-align: center;
 
@@ -162,7 +148,7 @@
                         animation: sword .5s;
                     }
                 }
-                a {
+                >* {
                     display: block;
                     color: #000!important;
                     font-size: 13px;

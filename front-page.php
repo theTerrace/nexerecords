@@ -17,7 +17,7 @@
 <div class="container">
 <div class="row">
 	
-	<div class="col-12">
+	<div class="col-12 hidden-md-down">
 
 		<?php if ( $news_swiper->have_posts() ) : ?>
 			<div class="swiper-container">
@@ -25,15 +25,15 @@
 					<?php while ($news_swiper->have_posts() ) : $news_swiper->the_post(); ?>
 						<div class="swiper-slide">
 						<article <?php post_class(); ?>>
-							<a href="<?php the_field('link_noticia'); ?>"  target="_blank"><?php //aqui esta el problema en news. ?>
+							
 								<div class="thumbnail cover" style="height: 340px; background-image: url(<?php the_post_thumbnail_url(); ?>);">
 									<div class="inner-info" style="width: 347px !important;">
-										<a class="inner-info-title" href="<?php the_permalink(); ?>">
+										<a class="inner-info-title" href="<?php (get_field("new")=="ext"? the_field("link_noticia"):the_permalink() ) ?>" target="<?php echo (get_field("new")=="ext"? "_blank" : "_self")?>">
 											<h3><?php the_title(); ?></h3>
 										</a>
 									</div>
 								</div>					
-							</a>
+							
 						</article>
 						</div>			
 					<?php endwhile; ?>
@@ -51,6 +51,40 @@
 	
 	</div>
 
+	<div class="col-12 hidden-lg-up">
+
+		<?php if ( $news_swiper->have_posts() ) : ?>
+			<div class="swiper-cont">
+				<div class="swiper-wrapper">
+					<?php while ($news_swiper->have_posts() ) : $news_swiper->the_post(); ?>
+						<div class="swiper-slide">
+						<article <?php post_class(); ?>>
+							
+								<div class="thumbnail cover" style="height: 340px; background-image: url(<?php the_post_thumbnail_url(); ?>);">
+									<div class="inner-info" style="width: 347px !important;">
+										<a class="inner-info-title" href="<?php (get_field("new")=="ext"? the_field("link_noticia"):the_permalink() ) ?>" target="<?php echo (get_field("new")=="ext"? "_blank" : "_self")?>">
+											<h3><?php the_title(); ?></h3>
+										</a>
+									</div>
+								</div>					
+							
+						</article>
+						</div>			
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				</div>
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+
+			</div>
+		<?php else : ?>
+			<p><?php __('No News'); ?></p>
+		<?php endif; ?>	
+
+	</div>
+
 </div>
 </div>
 <div class="container">
@@ -58,7 +92,6 @@
 	
 	<div class="archive col-12">
 		
-		<h1><?= Titles\title(); ?></h1>
 
 		<?php if($news->have_posts()): ?>
 			
@@ -66,8 +99,7 @@
 
 				<?php while($news->have_posts()): $news-> the_post(); ?>
 				
-					<div class="col-md-4">
-
+					<div class="col-lg-4 col-md-6">
 						<?php get_template_part('templates/content') ?>
 				
 					</div>
@@ -84,20 +116,22 @@
 				}
 			?>
 
-			<div class="row">
-				<div class="col-12">
-					<nav>
-						<ul class="pagination justify-content-between">
-							<li class="page-item flex-last">
-								<?= get_next_posts_link($next_pagination_link_label, $news->max_num_pages); ?>
-							</li>
-							<li class="page-item flex-first">
-								<?= get_previous_posts_link($prev_pagination_link_label); ?>
-							</li>
-						</ul>
-					</nav>
-				</div>		
-			</div>
+			<section class="row prev-next-container">
+				<div class="col-6 prev-next-wrapper">
+					<div class="post-navigator its-prev">
+						<p class="title-prev">
+							<?= get_previous_posts_link($prev_pagination_link_label); ?>
+						</p>
+					</div>
+				</div>
+				<div class="col-6 prev-next-wrapper">
+					<div class="post-navigator its-next">
+						<p class="title-next">
+							<?= get_next_posts_link($next_pagination_link_label, $news->max_num_pages); ?>
+						</p>
+					</div>
+				</div>
+			</section>
 
 		
 		<?php endif; ?>
