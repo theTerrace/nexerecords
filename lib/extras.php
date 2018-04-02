@@ -86,31 +86,3 @@ function get_archive_news_swiper(){
   $the_query = new \WP_Query($args);
   return $the_query;
 }
-
-function get_archive_news(){
-  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-  $args = array(
-      'post_type' => 'new',
-      'posts_per_page' => 3,
-      'paged' => $paged
-  );
-
-  $the_query = new \WP_Query($args);
-  return $the_query;
-}
-
-function archive_post_per_page(){
-  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-  $args = array(
-      'post_type' => (is_post_type_archive('artist')) ? 'artist' : 
-      ((is_post_type_archive('release')) ? 'release' : 'merchandise'),         
-      'posts_per_page' => 3,
-      'paged' => $paged
-  );
-
-  $the_query = new \WP_Query($args);
-  return $the_query;
-}
-

@@ -1,6 +1,6 @@
 <?php use Roots\Sage\Titles; ?>
 <?php use Roots\Sage\Extras; ?>
-<?php $collections = Extras\archive_post_per_page(); 
+<?php //$collections = Extras\archive_post_per_page(); 
 
     ///NEXT AND PREV LABEL (FONTAWESOME):
     $next_pagination_link_label = '<span>Next page <i class="fa fa-angle-right" aria-hidden="true">
@@ -17,11 +17,11 @@
 
 			<div class="hr"></div>
 
-			<?php if ($collections->have_posts()): //Going through the collection?>
+			<?php if (have_posts()): //Going through the collection?>
 
 			<div class="row">
 
-				<?php while($collections->have_posts()): $collections->the_post(); ?>			
+				<?php while(have_posts()): the_post(); ?>			
 				
 				<div class="col-lg-4 col-md-6">
 								
@@ -34,21 +34,22 @@
 			</div>
 
 			<?php
-				if ( function_exists( 'archive_post_per_page' ) ) {
+				/*if ( function_exists( 'archive_post_per_page' ) ) {
 					global $wp_query;
 					archive_post_per_page( $wp_query->max_num_pages );
-				}
+				}*/
 			?>
 
-			
 
-				<section class="row prev-next-container 
-				">
-					<div class="col-6 prev-next-wrapper">
-						<div class="post-navigator its-prev">
-							<p class="title-prev">
-								<?= get_previous_posts_link($prev_pagination_link_label); ?>
-								
+			<div class="row">
+				<div class="col-12">
+					<nav>
+						<ul class="pagination justify-content-between">
+							<li class="page-item flex-last">
+								<?= get_next_posts_link($next_pagination_link_label, $wp_query->max_num_pages); ?>
+							</li>
+							<li class="page-item flex-first">								
+								<?= get_previous_posts_link($prev_pagination_link_label); ?>								
 							</p>
 						</div>
 					</div>

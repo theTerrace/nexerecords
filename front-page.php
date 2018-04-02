@@ -2,7 +2,7 @@
 <?php 
 	use Roots\Sage\Titles;
 	use Roots\Sage\Extras;
-	$news = Extras\get_archive_news();
+	//$news = Extras\get_archive_news();
 	$news_swiper = Extras\get_archive_news_swiper();
 
 	///NEXT AND PREV LABEL (FONTAWESOME):
@@ -19,7 +19,8 @@
 	
 	<div class="col-12 hidden-md-down">
 
-		<?php if ( $news_swiper->have_posts() ) : ?>
+
+		<?php if ($news_swiper->have_posts() ) : ?>
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<?php while ($news_swiper->have_posts() ) : $news_swiper->the_post(); ?>
@@ -93,11 +94,11 @@
 	<div class="archive col-12">
 		
 
-		<?php if($news->have_posts()): ?>
+		<?php if(have_posts()): ?>
 			
 			<div class="row">							
 
-				<?php while($news->have_posts()): $news-> the_post(); ?>
+				<?php while(have_posts()): the_post(); ?>
 				
 					<div class="col-lg-4 col-md-6">
 						<?php get_template_part('templates/content') ?>
@@ -110,28 +111,26 @@
 			</div>
 
 			<?php
-				if ( function_exists( 'get_archive_news' ) ) {
+				/*if ( function_exists( 'get_archive_news' ) ) {
 					global $wp_query;
 					archive_post_per_page( $wp_query->max_num_pages );
-				}
+				}*/
 			?>
 
-			<section class="row prev-next-container">
-				<div class="col-6 prev-next-wrapper">
-					<div class="post-navigator its-prev">
-						<p class="title-prev">
-							<?= get_previous_posts_link($prev_pagination_link_label); ?>
-						</p>
-					</div>
-				</div>
-				<div class="col-6 prev-next-wrapper">
-					<div class="post-navigator its-next">
-						<p class="title-next">
-							<?= get_next_posts_link($next_pagination_link_label, $news->max_num_pages); ?>
-						</p>
-					</div>
-				</div>
-			</section>
+			<div class="row">
+				<div class="col-12">
+					<nav>
+						<ul class="pagination justify-content-between">
+							<li class="page-item flex-last">
+								<?= get_next_posts_link($next_pagination_link_label, $wp_query->max_num_pages); ?>
+							</li>
+							<li class="page-item flex-first">
+								<?= get_previous_posts_link($prev_pagination_link_label); ?>
+							</li>
+						</ul>
+					</nav>
+				</div>		
+			</div>
 
 		
 		<?php endif; ?>

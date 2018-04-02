@@ -6,11 +6,13 @@
 		
 			<a class="inner-info-title" href="<?php the_permalink(); ?>">
 			
-				<h3><?php the_title(); ?></h3>
+				<h3 class="<?php (is_post_type_archive('release')? 'release-title' : '') ?>" ><?php the_title(); ?></h3>
 			
 			</a>
 
 			<?php if (is_post_type_archive('release')) : ?>	
+
+				<hr class="separator"/>
 
 				<div class="info-top-link-wrapper">
 

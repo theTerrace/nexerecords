@@ -61,18 +61,36 @@ function add_current_nav_class($classes, $item) {
   return $classes;
 
 }
-
-function add_blog_post_to_query( $query ) {
-  if ( $query->is_post_type_archive('artist') && $query->is_main_query()) {
-      $query->set( 'post_type', array('artist') );
+//PARA MEJORAR!
+function add_post_types_to_query( $query ) {
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+  if (($query->is_post_type_archive('artist') || $query->is_post_type_archive('release') || $query->is_post_type_archive('merchandise')) && $query->is_main_query() && !is_admin()) {
+        if(is_post_type_archive('artist'))$query->set( 'post_type', array('artist'));
+        if(is_post_type_archive('release'))$query->set( 'post_type', array('release'));
+        if(is_post_type_archive('merchandise'))$query->set( 'post_type', array('merchandise'));
+        $query->set('posts_per_page', 10 );
+        $query->set('paged', $paged);
   }
-  if ($query->is_post_type_archive('release') && $query->is_main_query()){
-      $query->set( 'post_type', array('release') );
-  }
-  if ($query->is_post_type_archive('merchandise') && $query->is_main_query()){
-      $query->set( 'post_type', array('merchandise') );
-  }
-  if(!is_admin())$query->set( 'posts_per_page', 12 );
   
+ } 
+ add_action( 'pre_get_posts', 'add_post_types_to_query' );
+
+
+ //FUNCION PARA CONTROLAR LA CALIDAD DE LAS IMAGENES QUE SE SUBIRAN
+
+add_filter('wp_handle_upload_prefilter','tc_handle_upload_prefilter');
+function tc_handle_upload_prefilter($file) {
+
+    $img=getimagesize($file['tmp_name']);
+    $minimum = array('width' => '640', 'height' => '480');
+    $width= $img[0];
+    $height =$img[1];
+
+    if ($width < $minimum['width'] )
+        return array("error"=>"Image dimensions are too small. Minimum width is {$minimum['width']}px. Uploaded image width is $width px");
+
+    elseif ($height <  $minimum['height'])
+        return array("error"=>"Image dimensions are too small. Minimum height is {$minimum['height']}px. Uploaded image height is $height px");
+    else
+        return $file; 
 }
-add_action( 'pre_get_posts', 'add_blog_post_to_query' );
