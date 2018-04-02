@@ -68,7 +68,7 @@ function add_post_types_to_query( $query ) {
         if(is_post_type_archive('artist'))$query->set( 'post_type', array('artist'));
         if(is_post_type_archive('release'))$query->set( 'post_type', array('release'));
         if(is_post_type_archive('merchandise'))$query->set( 'post_type', array('merchandise'));
-        $query->set('posts_per_page', 10 );
+        $query->set('posts_per_page', 9 );
         $query->set('paged', $paged);
   }
   

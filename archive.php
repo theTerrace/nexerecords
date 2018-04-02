@@ -50,18 +50,11 @@
 							</li>
 							<li class="page-item flex-first">								
 								<?= get_previous_posts_link($prev_pagination_link_label); ?>								
-							</p>
-						</div>
-					</div>
-					<div class="col-6 prev-next-wrapper">
-						<div class="post-navigator its-next">
-							<p class="title-next">
-								<?= get_next_posts_link($next_pagination_link_label, $collections->max_num_pages); ?>
-							</p>
-						</div>
-					</div>
-				</section>
-
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 
 				<?php else: ?>	
 			

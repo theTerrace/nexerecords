@@ -93,9 +93,12 @@
 				
 				.inner-info-title {
 					display: flex;
-					position: relative;
-					top: -20px;
-				}
+					
+					.upper-info-title {
+						position: relative;
+						top: -20px;
+					}
+				}				
 	
 				.separator {
 					display: block;
@@ -110,6 +113,9 @@
 	
 				.info-top-link-wrapper {
 					display: block;
+					position: absolute;
+					top: 124px;
+
 				}
 			}
 			

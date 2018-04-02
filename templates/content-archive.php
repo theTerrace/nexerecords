@@ -6,7 +6,7 @@
 		
 			<a class="inner-info-title" href="<?php the_permalink(); ?>">
 			
-				<h3 class="<?php (is_post_type_archive('release')? 'release-title' : '') ?>" ><?php the_title(); ?></h3>
+				<h3 class="<?php if (is_post_type_archive('release')) echo 'upper-info-title';?>" ><?php the_title(); ?></h3>
 			
 			</a>
 
